@@ -1,0 +1,8 @@
+*.env
+!*.env.example
+.garmin_tokens*
+renpho_sync_state.json
+__pycache__/
+*.pyc
+venv/
+.venv/

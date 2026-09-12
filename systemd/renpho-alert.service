@@ -1,0 +1,7 @@
+[Unit]
+Description=Telegram-Alarm bei fehlgeschlagenem Renpho-Sync
+
+[Service]
+Type=oneshot
+User=pi
+ExecStart=/home/pi/mywhoosh-garmin-sync/notify_telegram.sh "⚠️ Renpho→Garmin Sync fehlgeschlagen. journalctl -u renpho-to-garmin.service -n 30 pruefen."

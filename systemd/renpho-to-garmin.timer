@@ -1,0 +1,9 @@
+[Unit]
+Description=Taeglicher Renpho -> Garmin Sync
+
+[Timer]
+OnCalendar=*-*-* 06:15:00
+Persistent=true
+
+[Install]
+WantedBy=timers.target

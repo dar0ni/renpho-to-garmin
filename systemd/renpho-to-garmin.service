@@ -1,0 +1,13 @@
+[Unit]
+Description=Renpho -> Garmin Connect Koerperkomposition-Sync
+After=network-online.target
+Wants=network-online.target
+OnFailure=renpho-alert.service
+
+[Service]
+Type=oneshot
+User=pi
+WorkingDirectory=/home/pi/pi-coach
+EnvironmentFile=/home/pi/pi-coach/renpho-to-garmin.env
+ExecStart=/home/pi/pi-coach/venv/bin/python3 /home/pi/pi-coach/renpho_to_garmin.py
+ExecStartPost=/home/pi/mywhoosh-garmin-sync/notify_telegram.sh "✅ Renpho→Garmin Sync erfolgreich"
